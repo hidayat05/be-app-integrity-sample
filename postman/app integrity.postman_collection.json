@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "3300b08d-e6c4-4a55-b18e-3a6be8e805c1",
+		"name": "app integrity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3065616"
+	},
+	"item": [
+		{
+			"name": "get nonce",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"deviceId\": \"lalalalalal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/get-nonce",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"get-nonce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validate nonce",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"deviceId\": \"\",\n    \"nonce\": \"32b9d9e0f83ae464+00007690a6be0046+bde6523cec4f077f7264a0e17d1b15ca30422a226af4b564d592b0b1d5fb7e70\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/validate-nonce",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"validate-nonce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/validate-token",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"validate-token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
