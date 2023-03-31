@@ -1,0 +1,49 @@
+[versions]
+ktor-server = "2.2.4"
+kotlin = "1.8.10"
+logback = "1.4.6"
+google-auth = "1.16.0"
+app-integrity = "v1-rev20230105-2.0.0"
+google-jackson = "1.29.2"
+koin = "3.4.0"
+
+[libraries]
+# ktor server
+ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor-server" }
+ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor-server" }
+ktor-server-cors = { module = "io.ktor:ktor-server-cors", version.ref = "ktor-server" }
+ktor-serialization = { module = "io.ktor:ktor-serialization-jackson", version.ref = "ktor-server" }
+ktor-call-id = { module = "io.ktor:ktor-server-call-id", version.ref = "ktor-server" }
+ktor-server-status-page = { module = "io.ktor:ktor-server-status-pages", version.ref = "ktor-server" }
+ktor-server-call-logging = { module = "io.ktor:ktor-server-call-logging", version.ref = "ktor-server" }
+ktor-server-content-nego = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor-server" }
+
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+
+#google
+google-auth = { group = "com.google.auth", name = "google-auth-library-oauth2-http", version.ref = "google-auth" }
+google-client-jackson = { group = "com.google.http-client", name = "google-http-client-jackson2", version.ref = "google-jackson" }
+google-app-integrity = { group = "com.google.apis", name = "google-api-services-playintegrity", version.ref = "app-integrity" }
+
+# koin DI
+koin-core = { module = "io.insert-koin:koin-ktor", version.ref = "koin" }
+koin-log = { module = "io.insert-koin:koin-logger-slf4j", version.ref = "koin" }
+
+kotlin-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+ktor-test-host = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor-server" }
+
+[plugins]
+ktor = { id = "io.ktor.plugin", version = "ktor-server" }
+
+[bundles]
+ktor-server = ["ktor-server-netty",
+    "ktor-server-core",
+    "ktor-server-cors",
+    "ktor-serialization",
+    "ktor-call-id",
+    "ktor-server-status-page",
+    "ktor-server-call-logging",
+    "ktor-server-content-nego",
+    "koin-core",
+    "koin-log"
+]
